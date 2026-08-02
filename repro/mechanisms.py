@@ -4,8 +4,9 @@ import math
 from dataclasses import dataclass
 
 import numpy as np
+from scipy.integrate import quad
 from scipy.optimize import brentq, minimize_scalar
-from scipy.special import ndtr
+from scipy.special import logsumexp, ndtr
 
 
 SQRT_2PI = math.sqrt(2.0 * math.pi)
@@ -49,10 +50,12 @@ class MultiGaussian:
         object.__setattr__(self, "weights", weights / weights.sum())
 
     def density(self, x: np.ndarray | float, sigma: float) -> np.ndarray:
+        return np.exp(self.log_density(x, sigma))
+
+    def log_density(self, x: np.ndarray | float, sigma: float) -> np.ndarray:
         points = np.atleast_1d(np.asarray(x, dtype=float))
         z = (points[:, None] - self.centers[None, :]) / sigma
-        values = np.exp(-0.5 * z * z) @ self.weights / (SQRT_2PI * sigma)
-        return values
+        return logsumexp(-0.5 * z * z + np.log(self.weights), axis=1) - math.log(SQRT_2PI * sigma)
 
     def cdf(self, x: np.ndarray | float, sigma: float) -> np.ndarray:
         points = np.atleast_1d(np.asarray(x, dtype=float))
@@ -80,51 +83,49 @@ def hockey_stick_divergence(
 ) -> float:
     if shift <= 0.0:
         return 0.0
-    tail = 10.0
+    tail = 14.0
     hotspots = np.concatenate((mechanism.centers, mechanism.centers - shift))
     offsets = np.linspace(-tail, tail, hotspot_points) * sigma
     local = (hotspots[:, None] + offsets[None, :]).ravel()
     lower = float(hotspots.min() - tail * sigma)
     upper = float(hotspots.max() + tail * sigma)
     points = np.unique(np.concatenate((local, np.linspace(lower, upper, global_points))))
-    exp_epsilon = math.exp(mechanism.epsilon)
-
-    def values(x: np.ndarray | float) -> np.ndarray:
+    def privacy_margin(x: np.ndarray | float) -> np.ndarray:
         array = np.atleast_1d(np.asarray(x, dtype=float))
-        return mechanism.density(array + shift, sigma) - exp_epsilon * mechanism.density(array, sigma)
+        return mechanism.log_density(array + shift, sigma) - mechanism.log_density(array, sigma) - mechanism.epsilon
 
-    signs = values(points)
+    signs = privacy_margin(points)
     roots = []
     for index in np.flatnonzero(signs[:-1] * signs[1:] < 0.0):
         left = float(points[index])
         right = float(points[index + 1])
-        left_value = float(values(left)[0])
-        right_value = float(values(right)[0])
+        left_value = float(privacy_margin(left)[0])
+        right_value = float(privacy_margin(right)[0])
         if left_value == 0.0:
             roots.append(left)
         elif right_value == 0.0:
             roots.append(right)
         elif left_value * right_value < 0.0:
-            roots.append(brentq(lambda x: float(values(x)[0]), left, right, xtol=1e-12, rtol=1e-12))
+            roots.append(brentq(lambda x: float(privacy_margin(x)[0]), left, right, xtol=1e-12, rtol=1e-12))
     if roots:
         roots = list(np.unique(np.round(roots, 13)))
 
-    boundaries = [-math.inf, *roots, math.inf]
+    boundaries = [lower, *roots, upper]
     divergence = 0.0
     for left, right in zip(boundaries[:-1], boundaries[1:]):
-        if math.isinf(left) and math.isinf(right):
-            probe = 0.0
-        elif math.isinf(left):
-            probe = right - max(2.0 * sigma, 1.0)
-        elif math.isinf(right):
-            probe = left + max(2.0 * sigma, 1.0)
-        else:
-            probe = 0.5 * (left + right)
-        if values(probe)[0] <= 0.0:
+        probe = 0.5 * (left + right)
+        if privacy_margin(probe)[0] <= 0.0:
             continue
-        shifted_mass = mechanism.cdf(right + shift, sigma)[0] - mechanism.cdf(left + shift, sigma)[0]
-        base_mass = mechanism.cdf(right, sigma)[0] - mechanism.cdf(left, sigma)[0]
-        divergence += shifted_mass - exp_epsilon * base_mass
+
+        def positive_difference(x: float) -> float:
+            shifted_log_density = float(mechanism.log_density(x + shift, sigma)[0])
+            base_log_density = float(mechanism.log_density(x, sigma)[0]) + mechanism.epsilon
+            if shifted_log_density <= base_log_density:
+                return 0.0
+            return math.exp(shifted_log_density) * -math.expm1(base_log_density - shifted_log_density)
+
+        mass, _ = quad(positive_difference, left, right, epsabs=2e-13, epsrel=2e-10, limit=200)
+        divergence += mass
     return max(float(divergence), 0.0)
 
 

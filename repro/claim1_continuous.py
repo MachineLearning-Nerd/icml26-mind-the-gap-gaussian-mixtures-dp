@@ -141,15 +141,17 @@ def run_claim1() -> dict[str, object]:
     }
     return {
         "claim": 1,
-        "route": "continuous-DP recalibration of paper-selected K on all 150 settings",
+        "route": "stable log-density root finding and direct privacy-loss quadrature for paper-selected K on all 150 settings",
         "status": "VERIFIED" if exact_contract else "INCONCLUSIVE",
         "summary": summary,
         "results": results,
         "proposition_33_regression": proposition_33_regression,
         "limitations": [
             "K values are taken from paper Table 3; this route does not independently search all K=1..20.",
-            "Continuous shift maximization uses adaptive local optimization plus a 129-point independent checker.",
-            "The checker targets exact hockey-stick divergence and does not reuse the paper improvement values for calibration.",
+            "Continuous shift maximization uses adaptive local optimization plus a denser 129-point independent checker.",
+            "Privacy-loss roots use log-density ratios; positive hockey-stick mass is integrated directly instead of subtracting CDF values.",
+            "Gaussian tails beyond 14 standard deviations from every component center are omitted; their total mass is below the quadrature tolerance.",
+            "The checker does not reuse the paper improvement values for calibration.",
         ],
     }
 
