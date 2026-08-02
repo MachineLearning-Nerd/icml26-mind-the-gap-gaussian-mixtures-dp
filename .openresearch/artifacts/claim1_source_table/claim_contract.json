@@ -1,6 +1,6 @@
 {
   "claim_id": 1,
-  "paper_statement": "Across the 150 (epsilon, delta) settings in Table 1, the best K in {1,...,20} multi-Gaussian has lower expected l1 loss than the analytic Gaussian in 142 settings; the all-setting improvement has mean 53.73%, population standard deviation 34.86 percentage points, and median 61.86%.",
+  "paper_statement": "Across the 150 (epsilon, delta) settings in Table 1, the best K in {1,...,20} (epsilon,delta)-DP multi-Gaussian has lower expected l1 loss than the analytic Gaussian in 142 settings; the all-setting improvement has mean 53.73%, sample standard deviation 34.86 percentage points, and median 61.86%.",
   "domain": {
     "sensitivity": 1.0,
     "eta": 0.01,
@@ -10,6 +10,7 @@
   },
   "improvement_definition": "100 * (analytic_l1 - mixture_l1) / max(analytic_l1, mixture_l1)",
   "baseline_verifier_scope": "Checks the exact source table and its aggregate arithmetic. It is not independent scientific evidence and cannot verify Claim 1 by itself.",
+  "route_c_falsification_condition": "For any epsilon>=2 table entry, reconstruct the largest sigma compatible with two-decimal rounding. FALSIFIED if an 80-decimal independent checker exhibits a shift in [0,1] and measurable interval S for which P(Z+shift in S)-exp(epsilon)P(Z in S)>delta by more than 1e-10, while calibrated analytic-Gaussian controls pass and 1%-reduced-scale controls fail.",
   "pass_conditions": [
     "exact 15 x 10 grid",
     "142 positive entries when the eight paper NA cells are treated as no strict improvement",

@@ -1,7 +1,7 @@
-# Claim 1 Route B: stable privacy-loss quadrature
+# Claim 1 Route C: reported-loss adversarial audit
 
-For every Table 1 `(epsilon, delta)` setting, this route uses the K reported in paper Table 3, independently recalibrates sigma, and recomputes expected absolute loss. Privacy-loss roots are found from log-density ratios. Adaptive quadrature then integrates `p(x+s)-exp(epsilon)p(x)` directly on every positive interval instead of subtracting nearly equal CDF values. Calibration maximizes this hockey-stick divergence over shifts in `[0, Delta]`; it does not use the paper's reported improvement as an input.
+For each Table 1 cell with `epsilon >= 2`, this route reconstructs the largest sigma compatible with the paper's two-decimal reported improvement and the K reported in Table 3. It then searches for a single measurable interval and allowed shift whose exact DP difference exceeds delta. The selected witness is recomputed independently with 80-decimal arithmetic.
 
-The independent checker uses a denser 129-shift scan and finer log-ratio root bracketing. A 1% smaller sigma is the negative control and must violate the DP budget. All 150 settings execute on HF `cpu-upgrade` under the inherited fixed command and lock.
+Using the lower edge of the rounding interval maximizes sigma and is conservative for privacy: if that mechanism violates DP, every sigma compatible with the displayed loss does. Analytic Gaussian controls must pass at their calibrated sigma, while a 1% scale reduction must be rejected. The run executes on HF `cpu-upgrade` under the inherited fixed command and lock.
 
-This route is not sufficient by itself to prove that the reported K minimizes loss over all K in `{1,...,20}`. A later route must perform the complete K search.
+This is a falsification route for the paper's reported high-epsilon loss values under its stated `(epsilon,delta)`-DP assumption. It does not independently optimize all `K in {1,...,20}`.

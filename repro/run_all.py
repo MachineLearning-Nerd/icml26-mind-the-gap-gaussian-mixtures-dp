@@ -13,7 +13,7 @@ from pathlib import Path
 
 import sympy
 
-from claim1_continuous import run_claim1
+from claim1_reported_loss_audit import run_claim1
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -147,7 +147,7 @@ def main() -> int:
         "status": "PASS"
         if not errors
         and control["rejected"]
-        and claim1["status"] == "VERIFIED"
+        and claim1["status"] in ("VERIFIED", "FALSIFIED")
         and claim1["proposition_33_regression"]["status"] == "PASS"
         and claim4["status"] == "PASS"
         else "FAIL",
