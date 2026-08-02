@@ -137,6 +137,7 @@ def main() -> int:
             "compute": {
                 "backend": "hf",
                 "flavor": "cpu-upgrade",
+                "image": "ghcr.io/astral-sh/uv:0.11.29-python3.12-trixie",
                 "estimated_cores": 4,
                 "logical_cpus": os.cpu_count(),
                 "affinity_cpus": len(affinity) if affinity is not None else None,
