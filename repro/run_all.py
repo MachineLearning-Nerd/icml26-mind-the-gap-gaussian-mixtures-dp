@@ -16,6 +16,7 @@ import sympy
 from claim1_reported_loss_audit import run_claim1
 from claim3_gap_audit import run_claim3
 from claim5_benchmarks import run_claim5
+from report_figures import make_figures
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -142,6 +143,7 @@ def main() -> int:
     claim1 = run_claim1()
     claim3 = run_claim3(claim1)
     claim5 = run_claim5(claim1)
+    figures = make_figures(claim1, claim3, claim5)
     claim4 = corollary_37_regression()
     affinity = sorted(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None
     result = {
@@ -170,6 +172,7 @@ def main() -> int:
         "claim3_gap_closure_audit": claim3,
         "claim4_corollary_37_regression": claim4,
         "claim5_non_gaussian_benchmark_audit": claim5,
+        "report_figures": figures,
         "reproducibility": {
             "fixed_command": EXPECTED_COMMAND,
             "git_sha": git_sha(),

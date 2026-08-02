@@ -123,7 +123,18 @@ def run_claim5(claim1: dict[str, object]) -> dict[str, object]:
         tulap_l1(epsilon, delta) <= tulap_l1(epsilon, delta, truncate=False) + 1e-12
         for epsilon, delta in ((2.0, 1e-6), (5.0, 1e-3), (10.0, 0.25))
     ]
-    falsified = len(results) == 75 and len(high_witnesses) == 60 and all(tulap_controls)
+    staircase_checks = [
+        abs(staircase_l1(epsilon) - 1.0 / (2.0 * math.sinh(epsilon / 2.0)))
+        for epsilon in (2.0, 3.0, 4.0, 5.0, 10.0)
+    ]
+    staircase_control_error = abs(1.01 * staircase_l1(5.0) - 1.0 / (2.0 * math.sinh(2.5)))
+    staircase_certificate = max(staircase_checks) <= 1e-10 and staircase_control_error > 1e-4
+    falsified = (
+        len(results) == 75
+        and len(high_witnesses) == 60
+        and all(tulap_controls)
+        and staircase_certificate
+    )
     return {
         "claim": 5,
         "status": "FALSIFIED" if falsified else "BLOCKED",
@@ -148,6 +159,16 @@ def run_claim5(claim1: dict[str, object]) -> dict[str, object]:
             "mutation": "set Tulap truncation q to zero (pure-DP base distribution)",
             "rejected": all(tulap_controls),
             "reason": "removing approximate-DP tail truncation cannot lower expected absolute loss",
+        },
+        "staircase_independent_checker": {
+            "closed_form": "minimum expected l1 loss = 1 / (2*sinh(epsilon/2)) for sensitivity one",
+            "maximum_absolute_error": max(staircase_checks),
+            "status": "PASS" if staircase_certificate else "FAIL",
+            "negative_control": {
+                "mutation": "multiply the numerically optimized staircase loss by 1.01",
+                "absolute_error": staircase_control_error,
+                "rejected": staircase_control_error > 1e-4,
+            },
         },
         "named_mechanism_coverage": {
             "independently_implemented": ["truncated Laplace", "Tulap", "staircase"],

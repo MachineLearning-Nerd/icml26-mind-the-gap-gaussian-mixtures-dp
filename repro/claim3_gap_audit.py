@@ -54,6 +54,7 @@ def run_claim3(claim1: dict[str, object]) -> dict[str, object]:
             "epsilon_10_median_pct": statistics.median(epsilon10),
             "source_internal_consistency": "FAIL: Table 4 reports 88.88% at epsilon=5, delta=0.25, contradicting 'more than 90% for any delta>0'.",
         },
+        "source_tail_audit_rows": rows,
         "scientific_falsification": {
             "tail_cells_with_rounding_robust_dp_witness": len(high_epsilon_witnesses),
             "tail_cells_checked": expected_tail_cells,
