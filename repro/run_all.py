@@ -14,6 +14,7 @@ from pathlib import Path
 import sympy
 
 from claim1_reported_loss_audit import run_claim1
+from claim3_gap_audit import run_claim3
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,6 +139,7 @@ def main() -> int:
     errors = validation_errors(rows)
     control = negative_control(rows)
     claim1 = run_claim1()
+    claim3 = run_claim3(claim1)
     claim4 = corollary_37_regression()
     affinity = sorted(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None
     result = {
@@ -149,6 +151,7 @@ def main() -> int:
         and control["rejected"]
         and claim1["status"] in ("VERIFIED", "FALSIFIED")
         and claim1["proposition_33_regression"]["status"] == "PASS"
+        and claim3["status"] in ("VERIFIED", "FALSIFIED")
         and claim4["status"] == "PASS"
         else "FAIL",
         "source": {
@@ -161,6 +164,7 @@ def main() -> int:
         "errors": errors,
         "negative_control": control,
         "claim1_scientific_reproduction": claim1,
+        "claim3_gap_closure_audit": claim3,
         "claim4_corollary_37_regression": claim4,
         "reproducibility": {
             "fixed_command": EXPECTED_COMMAND,
@@ -172,7 +176,7 @@ def main() -> int:
                 "backend": "hf",
                 "flavor": "cpu-upgrade",
                 "image": "ghcr.io/astral-sh/uv:0.11.29-python3.12-trixie",
-                "estimated_cores": 32,
+                "estimated_cores": 1,
                 "logical_cpus": os.cpu_count(),
                 "affinity_cpus": len(affinity) if affinity is not None else None,
                 "platform": platform.platform(),
@@ -182,9 +186,11 @@ def main() -> int:
     result["reproducibility"]["runtime_seconds"] = time.perf_counter() - started
     print(json.dumps(result, indent=2, sort_keys=True))
     print(
-        "EVAL claim1_source_table={status} settings={settings} wins={wins} "
+        "EVAL cumulative={status} claim1={claim1_status} claim3={claim3_status} settings={settings} wins={wins} "
         "mean={mean:.6f} std={std:.6f} median={median:.6f} control_rejected={control}".format(
             status=result["status"],
+            claim1_status=claim1["status"],
+            claim3_status=claim3["status"],
             settings=summary["settings"],
             wins=summary["strict_wins"],
             mean=summary["mean_improvement_pct"],
