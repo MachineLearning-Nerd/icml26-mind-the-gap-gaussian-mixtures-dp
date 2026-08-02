@@ -98,7 +98,14 @@ def hockey_stick_divergence(
     for index in np.flatnonzero(signs[:-1] * signs[1:] < 0.0):
         left = float(points[index])
         right = float(points[index + 1])
-        roots.append(brentq(lambda x: float(values(x)[0]), left, right, xtol=1e-12, rtol=1e-12))
+        left_value = float(values(left)[0])
+        right_value = float(values(right)[0])
+        if left_value == 0.0:
+            roots.append(left)
+        elif right_value == 0.0:
+            roots.append(right)
+        elif left_value * right_value < 0.0:
+            roots.append(brentq(lambda x: float(values(x)[0]), left, right, xtol=1e-12, rtol=1e-12))
     if roots:
         roots = list(np.unique(np.round(roots, 13)))
 
