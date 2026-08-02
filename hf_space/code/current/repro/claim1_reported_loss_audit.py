@@ -143,20 +143,12 @@ def run_claim1() -> dict[str, object]:
     falsified = bool(violating) and controls_pass
     tail = [row for row in results if float(row["epsilon"]) in (5.0, 10.0)]
     strict_variance_wins = sum(float(row["mixture_variance"]) < float(row["analytic_variance"]) for row in tail)
-    mutated_strict_wins = strict_variance_wins - 1 if strict_variance_wins else 0
     proposition_33_regression = {
-        "status": "PASS"
-        if len(tail) == 30 and strict_variance_wins == 30 and mutated_strict_wins != 30
-        else "FAIL",
+        "status": "PASS" if len(tail) == 30 and strict_variance_wins == 30 else "FAIL",
         "checked_delta_values": 15,
         "checked_tail_epsilons": [5.0, 10.0],
         "checks": len(tail),
         "strict_variance_wins": strict_variance_wins,
-        "negative_control": {
-            "mutation": "replace one strict mixture-variance win with equality",
-            "mutated_strict_variance_wins": mutated_strict_wins,
-            "rejected": mutated_strict_wins != 30,
-        },
         "scope": "cumulative coverage check; the accepted Proposition 3.3 proof certificate is unchanged",
     }
     return {

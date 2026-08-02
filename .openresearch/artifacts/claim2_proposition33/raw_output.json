@@ -1,0 +1,11 @@
+{
+  "checked_delta_values": 15,
+  "checked_tail_epsilons": [
+    5,
+    10
+  ],
+  "checks": 30,
+  "scope": "cumulative coverage check; the accepted Proposition 3.3 proof certificate is unchanged",
+  "status": "PASS",
+  "strict_variance_wins": 30
+}

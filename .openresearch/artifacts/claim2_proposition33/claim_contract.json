@@ -1,0 +1,7 @@
+{
+  "claim": 2,
+  "verdict": "VERIFIED",
+  "domain": "every delta in (0, 1/2)",
+  "quantifiers": "there exists epsilon_0 such that the strict variance advantage holds for all epsilon>=epsilon_0",
+  "source_anchors": ["#S3.Thmtheorem3", "#A2.SS5"]
+}

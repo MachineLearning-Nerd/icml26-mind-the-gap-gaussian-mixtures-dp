@@ -1,0 +1,14 @@
+{
+  "certificate": "For every alpha>1 and every component k, the paired translated Gaussians have D_alpha = alpha*Delta^2/(2*sigma^2); Renyi quasi-convexity for common mixture weights gives the same upper bound for the mixtures.",
+  "negative_control": {
+    "mutation": "pair components with shift 1.1*Delta",
+    "ratio_to_claimed_bound": 1.2100000000000002,
+    "rejected": true
+  },
+  "source_anchors": [
+    "#S3.Thmtheorem7",
+    "#A2.SS8"
+  ],
+  "status": "PASS",
+  "symbolic_residual": "0"
+}

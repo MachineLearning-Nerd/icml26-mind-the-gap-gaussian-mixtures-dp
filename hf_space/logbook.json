@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy",
+  "emoji": "🎯",
+  "space_id": "DineshAI/RdBsmhb9U7",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-RdBsmhb9U7"
+  ],
+  "updated_at": "2026-08-02T00:00:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "current-verification",
+        "title": "Current verification",
+        "file": "pages/current/verification.md",
+        "children": [
+          {"slug": "claim-1", "title": "Claim 1 — FALSIFIED", "file": "pages/current/claim-1.md", "children": []},
+          {"slug": "claim-2", "title": "Claim 2 — VERIFIED", "file": "pages/current/claim-2.md", "children": []},
+          {"slug": "claim-3", "title": "Claim 3 — FALSIFIED", "file": "pages/current/claim-3.md", "children": []},
+          {"slug": "claim-4", "title": "Claim 4 — VERIFIED", "file": "pages/current/claim-4.md", "children": []},
+          {"slug": "claim-5", "title": "Claim 5 — FALSIFIED", "file": "pages/current/claim-5.md", "children": []},
+          {"slug": "visibility-matrix", "title": "Visibility matrix", "file": "pages/current/visibility-matrix.md", "children": []},
+          {"slug": "release-report", "title": "Release report", "file": "pages/current/release-report.md", "children": []},
+          {"slug": "red-team", "title": "Red-team record", "file": "pages/current/red-team.md", "children": []}
+        ]
+      },
+      {
+        "slug": "historical-index",
+        "title": "Historical rejected baseline — Index",
+        "file": "pages/historical-rejected-baseline-index.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "Historical rejected baseline — Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Historical rejected baseline — Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Historical rejected baseline — Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Historical rejected baseline — Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Historical rejected baseline — Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 1831,
+  "revision": "1785550856208637817"
+}

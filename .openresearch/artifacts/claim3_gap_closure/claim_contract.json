@@ -1,0 +1,8 @@
+{
+  "claim": 3,
+  "verdict": "FALSIFIED",
+  "domain": "epsilon>=5 and delta>0 in the paper's Table 4 grid",
+  "quantifiers": "more than 90 percent gap closure for any delta>0, up to 99 percent",
+  "falsification_condition": "a source-grid value at most 90 percent or a reported mechanism that violates its DP premise",
+  "source_anchors": ["#A4.SS3", "Table 4"]
+}

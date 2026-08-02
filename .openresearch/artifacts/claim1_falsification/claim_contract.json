@@ -1,0 +1,8 @@
+{
+  "claim": 1,
+  "verdict": "FALSIFIED",
+  "domain": "the complete 15 by 10 Table 1 grid; DP witness audit on all 75 epsilon>=2 cells",
+  "quantifiers": "142 of 150 valid (epsilon,delta)-DP mixtures improve on analytic Gaussian with the stated aggregate statistics",
+  "falsification_condition": "one reported mechanism satisfying the reconstruction assumptions has a fixed measurable event whose hockey-stick difference exceeds delta",
+  "source_anchors": ["#S5.T1", "#S5.SS1.p1"]
+}

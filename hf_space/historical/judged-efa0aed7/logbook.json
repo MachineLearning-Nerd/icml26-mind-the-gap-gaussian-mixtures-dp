@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy",
+  "emoji": "🎯",
+  "space_id": "DineshAI/RdBsmhb9U7",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-RdBsmhb9U7"
+  ],
+  "updated_at": "2026-08-01T02:20:56+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 1831,
+  "revision": "1785550856208637817"
+}

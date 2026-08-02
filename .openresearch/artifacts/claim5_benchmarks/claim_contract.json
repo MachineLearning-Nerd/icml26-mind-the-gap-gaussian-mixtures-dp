@@ -1,0 +1,8 @@
+{
+  "claim": 5,
+  "verdict": "FALSIFIED",
+  "domain": "Table 2 mechanism comparison; independent high-epsilon audit on 75 cells",
+  "quantifiers": "the benchmark winner is always truncated Laplace or Tulap and mixtures are competitive in the low-privacy regime",
+  "falsification_condition": "a valid named benchmark wins contrary to the stated winner identity, or reported mixtures violate equal privacy",
+  "source_anchors": ["#S5.T2", "#A4.SS6"]
+}

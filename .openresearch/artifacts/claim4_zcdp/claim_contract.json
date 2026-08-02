@@ -1,0 +1,7 @@
+{
+  "claim": 4,
+  "verdict": "VERIFIED",
+  "domain": "every alpha>1 for common-weight translated Gaussian mixtures",
+  "quantifiers": "D_alpha is at most alpha times rho with rho=Delta^2/(2 sigma^2)",
+  "source_anchors": ["#S3.Thmtheorem7", "#A2.SS8"]
+}

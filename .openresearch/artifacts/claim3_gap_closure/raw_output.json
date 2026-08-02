@@ -1,0 +1,114 @@
+{
+  "claim": 3,
+  "exact_source_contract": {
+    "appendix_d3": "mean 67.67% (sample sd 34.78), median 85.47%; for epsilon=5, more than 90% for any delta>0; reaching 99.72% for epsilon=10",
+    "imported_judge_wording_deviation": "The paper does not state that every epsilon>=1 cell has 79-99% l1 reduction. That phrase conflates Table 1 loss reduction with Appendix D.3 gap closure.",
+    "main_text": "multimodal Gaussians close up to 99% of the analytic-Gaussian optimality gap"
+  },
+  "limitations": [
+    "This falsifies the reported proposed-mechanism values, not the possibility that another valid mechanism closes a similar gap.",
+    "The Selvi lower-bound optimization is not rerun because invalidity of the reported mechanism already contradicts the exact claim assumptions."
+  ],
+  "negative_control": {
+    "mutation": "replace the epsilon=5, delta=0.25 source value 88.88 with 90.01",
+    "rejected": true
+  },
+  "scientific_falsification": {
+    "reason": "Every epsilon=5 and epsilon=10 loss used for the gap-closure claim implies a multi-Gaussian that violates the stated (epsilon,delta)-DP assumption at the most privacy-favorable edge of table rounding. Therefore the reported gap closures are not attained by the claimed DP mechanisms.",
+    "tail_cells_checked": 30,
+    "tail_cells_with_rounding_robust_dp_witness": 30
+  },
+  "source_tail_audit": {
+    "epsilon_10_max_pct": 99.94,
+    "epsilon_10_median_pct": 99.61,
+    "epsilon_10_min_pct": 96.93,
+    "epsilon_5_cells_above_90_pct": 14,
+    "epsilon_5_counterexample": {
+      "delta": 0.25,
+      "epsilon_10_gap_closed_pct": 99.21,
+      "epsilon_5_gap_closed_pct": 88.88
+    },
+    "epsilon_5_max_pct": 98.19,
+    "epsilon_5_min_pct": 88.88,
+    "rows": 15,
+    "source_internal_consistency": "FAIL: Table 4 reports 88.88% at epsilon=5, delta=0.25, contradicting 'more than 90% for any delta>0'."
+  },
+  "source_tail_audit_rows": [
+    {
+      "delta": 5e-7,
+      "epsilon_10_gap_closed_pct": 96.93,
+      "epsilon_5_gap_closed_pct": 96.97
+    },
+    {
+      "delta": 0.000001,
+      "epsilon_10_gap_closed_pct": 98.55,
+      "epsilon_5_gap_closed_pct": 94.77
+    },
+    {
+      "delta": 0.000005,
+      "epsilon_10_gap_closed_pct": 99.93,
+      "epsilon_5_gap_closed_pct": 98.19
+    },
+    {
+      "delta": 0.00001,
+      "epsilon_10_gap_closed_pct": 99.94,
+      "epsilon_5_gap_closed_pct": 98.16
+    },
+    {
+      "delta": 0.00005,
+      "epsilon_10_gap_closed_pct": 99.75,
+      "epsilon_5_gap_closed_pct": 97.93
+    },
+    {
+      "delta": 0.0001,
+      "epsilon_10_gap_closed_pct": 99.77,
+      "epsilon_5_gap_closed_pct": 97.74
+    },
+    {
+      "delta": 0.0005,
+      "epsilon_10_gap_closed_pct": 99.73,
+      "epsilon_5_gap_closed_pct": 97.3
+    },
+    {
+      "delta": 0.001,
+      "epsilon_10_gap_closed_pct": 99.71,
+      "epsilon_5_gap_closed_pct": 97.04
+    },
+    {
+      "delta": 0.005,
+      "epsilon_10_gap_closed_pct": 99.64,
+      "epsilon_5_gap_closed_pct": 96.18
+    },
+    {
+      "delta": 0.01,
+      "epsilon_10_gap_closed_pct": 99.61,
+      "epsilon_5_gap_closed_pct": 95.68
+    },
+    {
+      "delta": 0.02,
+      "epsilon_10_gap_closed_pct": 99.56,
+      "epsilon_5_gap_closed_pct": 95
+    },
+    {
+      "delta": 0.05,
+      "epsilon_10_gap_closed_pct": 99.48,
+      "epsilon_5_gap_closed_pct": 93.72
+    },
+    {
+      "delta": 0.1,
+      "epsilon_10_gap_closed_pct": 99.39,
+      "epsilon_5_gap_closed_pct": 92.26
+    },
+    {
+      "delta": 0.15,
+      "epsilon_10_gap_closed_pct": 99.33,
+      "epsilon_5_gap_closed_pct": 91.05
+    },
+    {
+      "delta": 0.25,
+      "epsilon_10_gap_closed_pct": 99.21,
+      "epsilon_5_gap_closed_pct": 88.88
+    }
+  ],
+  "status": "FALSIFIED"
+}
