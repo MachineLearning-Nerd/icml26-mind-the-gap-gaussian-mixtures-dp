@@ -1,0 +1,12 @@
+[project]
+name = "mind-the-gap-reproduction"
+version = "0.1.0"
+description = "Claim-by-claim reproduction of arXiv:2605.28078"
+requires-python = "==3.12.*"
+dependencies = [
+  "marimo",
+  "matplotlib",
+  "numpy",
+  "scipy",
+  "sympy",
+]
