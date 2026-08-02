@@ -12,8 +12,7 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md(r"""
 # Mind the Gap: a claim-by-claim reproduction
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
@@ -22,8 +21,7 @@ def _(mo):
 </div>
 
 The strongest result is a concrete counterexample at ε=3, δ=5×10⁻⁷. Even after choosing the largest noise scale compatible with Table 1 rounding, one fixed measurable interval exceeds the allowed DP budget by 0.0670362.
-"""
-    )
+""")
     return
 
 
@@ -42,13 +40,11 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md(r"""
 ## How the verifier works
 
 Table 1's expected absolute loss and selected `K` determine the Gaussian scale. We reconstruct the **largest** scale consistent with two-decimal rounding. A float64 search proposes a measurable interval; an independent 80-decimal checker evaluates `P[M(D)∈S] − exp(ε)P[M(D′)∈S]`. If this exceeds δ for one neighboring shift in `[0,1]`, the exact DP quantifier is contradicted. Analytic-Gaussian controls pass; reducing their calibrated scale by 1% is rejected.
-"""
-    )
+""")
     return
 
 
@@ -70,15 +66,13 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(
-        """
+    mo.md(r"""
 ## Interpretation and limits
 
 This does not say Gaussian mixtures can never help. It says the **reported mechanisms** do not attain Claims 1, 3, and 5 under their stated privacy assumptions. The benchmark audit implements truncated Laplace, Tulap, and staircase for 75 high-ε cells; cactus and flipped Huber are source-audited only because the paper states neither is ever the winner.
 
 Formal evidence used `uv sync --frozen && .venv/bin/python repro/run_all.py` on Hugging Face `cpu-upgrade`, seed `260528078`. This notebook embeds the decisive results and does not rerun the campaign.
-"""
-    )
+""")
     return
 
 
