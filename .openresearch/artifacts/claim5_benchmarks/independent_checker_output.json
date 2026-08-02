@@ -1,0 +1,10 @@
+{
+  "closed_form": "minimum expected l1 loss = 1 / (2*sinh(epsilon/2)) for sensitivity one",
+  "maximum_absolute_error": 2.220446049250313e-16,
+  "negative_control": {
+    "absolute_error": 0.0008264183492754651,
+    "mutation": "multiply the numerically optimized staircase loss by 1.01",
+    "rejected": true
+  },
+  "status": "PASS"
+}

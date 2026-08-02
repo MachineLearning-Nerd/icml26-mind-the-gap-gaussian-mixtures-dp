@@ -14,15 +14,15 @@ def _():
 def _(mo):
     mo.md(
         """
-        # Mind the Gap: a claim-by-claim reproduction
+# Mind the Gap: a claim-by-claim reproduction
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-          <div style="padding:1rem;border:1px solid #ddd;border-radius:12px"><b>Paper DP budget</b><br><span style="font-size:2rem">0.5 × 10⁻⁶</span></div>
-          <div style="padding:1rem;border:2px solid #b91c1c;border-radius:12px;color:#b91c1c"><b>Fixed-event witness</b><br><span style="font-size:2rem">67,036.7 × 10⁻⁶</span></div>
-        </div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+  <div style="padding:1rem;border:1px solid #ddd;border-radius:12px"><b>Paper DP budget</b><br><span style="font-size:2rem">0.5 × 10⁻⁶</span></div>
+  <div style="padding:1rem;border:2px solid #b91c1c;border-radius:12px;color:#b91c1c"><b>Fixed-event witness</b><br><span style="font-size:2rem">67,036.7 × 10⁻⁶</span></div>
+</div>
 
-        The strongest result is a concrete counterexample at ε=3, δ=5×10⁻⁷. Even after choosing the largest noise scale compatible with Table 1 rounding, one fixed measurable interval exceeds the allowed DP budget by 0.0670362.
-        """
+The strongest result is a concrete counterexample at ε=3, δ=5×10⁻⁷. Even after choosing the largest noise scale compatible with Table 1 rounding, one fixed measurable interval exceeds the allowed DP budget by 0.0670362.
+"""
     )
     return
 
@@ -44,10 +44,10 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-        ## How the verifier works
+## How the verifier works
 
-        Table 1's expected absolute loss and selected `K` determine the Gaussian scale. We reconstruct the **largest** scale consistent with two-decimal rounding. A float64 search proposes a measurable interval; an independent 80-decimal checker evaluates `P[M(D)∈S] − exp(ε)P[M(D′)∈S]`. If this exceeds δ for one neighboring shift in `[0,1]`, the exact DP quantifier is contradicted. Analytic-Gaussian controls pass; reducing their calibrated scale by 1% is rejected.
-        """
+Table 1's expected absolute loss and selected `K` determine the Gaussian scale. We reconstruct the **largest** scale consistent with two-decimal rounding. A float64 search proposes a measurable interval; an independent 80-decimal checker evaluates `P[M(D)∈S] − exp(ε)P[M(D′)∈S]`. If this exceeds δ for one neighboring shift in `[0,1]`, the exact DP quantifier is contradicted. Analytic-Gaussian controls pass; reducing their calibrated scale by 1% is rejected.
+"""
     )
     return
 
@@ -72,12 +72,12 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-        ## Interpretation and limits
+## Interpretation and limits
 
-        This does not say Gaussian mixtures can never help. It says the **reported mechanisms** do not attain Claims 1, 3, and 5 under their stated privacy assumptions. The benchmark audit implements truncated Laplace, Tulap, and staircase for 75 high-ε cells; cactus and flipped Huber are source-audited only because the paper states neither is ever the winner.
+This does not say Gaussian mixtures can never help. It says the **reported mechanisms** do not attain Claims 1, 3, and 5 under their stated privacy assumptions. The benchmark audit implements truncated Laplace, Tulap, and staircase for 75 high-ε cells; cactus and flipped Huber are source-audited only because the paper states neither is ever the winner.
 
-        Formal evidence used `uv sync --frozen && .venv/bin/python repro/run_all.py` on Hugging Face `cpu-upgrade`, seed `260528078`. This notebook embeds the decisive results and does not rerun the campaign.
-        """
+Formal evidence used `uv sync --frozen && .venv/bin/python repro/run_all.py` on Hugging Face `cpu-upgrade`, seed `260528078`. This notebook embeds the decisive results and does not rerun the campaign.
+"""
     )
     return
 

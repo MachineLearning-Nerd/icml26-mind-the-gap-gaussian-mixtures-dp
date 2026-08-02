@@ -1,0 +1,12 @@
+{
+  "staircase": {
+    "absolute_error": 0.0008264183492754651,
+    "mutation": "multiply the numerically optimized staircase loss by 1.01",
+    "rejected": true
+  },
+  "tulap": {
+    "mutation": "set Tulap truncation q to zero (pure-DP base distribution)",
+    "reason": "removing approximate-DP tail truncation cannot lower expected absolute loss",
+    "rejected": true
+  }
+}

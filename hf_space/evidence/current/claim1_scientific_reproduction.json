@@ -43,6 +43,11 @@
       10
     ],
     "checks": 30,
+    "negative_control": {
+      "mutated_strict_variance_wins": 29,
+      "mutation": "replace one strict mixture-variance win with equality",
+      "rejected": true
+    },
     "scope": "cumulative coverage check; the accepted Proposition 3.3 proof certificate is unchanged",
     "status": "PASS",
     "strict_variance_wins": 30

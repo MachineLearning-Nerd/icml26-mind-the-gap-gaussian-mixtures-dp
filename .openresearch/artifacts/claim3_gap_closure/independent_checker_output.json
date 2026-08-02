@@ -1,0 +1,22 @@
+{
+  "source": {
+    "epsilon_10_max_pct": 99.94,
+    "epsilon_10_median_pct": 99.61,
+    "epsilon_10_min_pct": 96.93,
+    "epsilon_5_cells_above_90_pct": 14,
+    "epsilon_5_counterexample": {
+      "delta": 0.25,
+      "epsilon_10_gap_closed_pct": 99.21,
+      "epsilon_5_gap_closed_pct": 88.88
+    },
+    "epsilon_5_max_pct": 98.19,
+    "epsilon_5_min_pct": 88.88,
+    "rows": 15,
+    "source_internal_consistency": "FAIL: Table 4 reports 88.88% at epsilon=5, delta=0.25, contradicting 'more than 90% for any delta>0'."
+  },
+  "science": {
+    "reason": "Every epsilon=5 and epsilon=10 loss used for the gap-closure claim implies a multi-Gaussian that violates the stated (epsilon,delta)-DP assumption at the most privacy-favorable edge of table rounding. Therefore the reported gap closures are not attained by the claimed DP mechanisms.",
+    "tail_cells_checked": 30,
+    "tail_cells_with_rounding_robust_dp_witness": 30
+  }
+}

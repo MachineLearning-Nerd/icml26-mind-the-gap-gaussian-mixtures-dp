@@ -1,0 +1,22 @@
+{
+  "method": "80-decimal fixed-event recomputation",
+  "smallest_positive_witness": {
+    "analytic_variance": 2.5207471242002453,
+    "conservative_improvement_pct": 78.545,
+    "conservative_sigma": 0.23811581113482513,
+    "delta": 5e-7,
+    "epsilon": 3,
+    "k": 14,
+    "mixture_variance": 0.16698115051651524,
+    "mpmath_80dps_difference": "0.067036715355644703485854324343982978957575295471098",
+    "reported_improvement_pct": 78.55,
+    "search_difference": 0.06703671535564482,
+    "violates_dp": true,
+    "violation_margin": 0.0670362153556447,
+    "witness_set": [
+      -0.8690579055674126,
+      -0.6309420944325874
+    ],
+    "witness_shift": 0.75
+  }
+}

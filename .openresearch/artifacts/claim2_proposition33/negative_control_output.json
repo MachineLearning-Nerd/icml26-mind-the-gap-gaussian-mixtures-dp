@@ -1,0 +1,5 @@
+{
+  "mutated_strict_variance_wins": 29,
+  "mutation": "replace one strict mixture-variance win with equality",
+  "rejected": true
+}

@@ -1,0 +1,5 @@
+{
+  "certificate": "For every alpha>1 and every component k, the paired translated Gaussians have D_alpha = alpha*Delta^2/(2*sigma^2); Renyi quasi-convexity for common mixture weights gives the same upper bound for the mixtures.",
+  "symbolic_residual": "0",
+  "status": "PASS"
+}

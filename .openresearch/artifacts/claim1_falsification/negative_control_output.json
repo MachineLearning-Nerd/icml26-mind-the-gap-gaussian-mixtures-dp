@@ -1,0 +1,29 @@
+[
+  {
+    "calibrated_divergence": 0.000001000000000000009,
+    "calibrated_passes": true,
+    "delta": 0.000001,
+    "epsilon": 2,
+    "negative_control": "reduce analytic Gaussian sigma by 1%",
+    "negative_control_divergence": 0.0000012528226256949705,
+    "negative_control_rejected": true
+  },
+  {
+    "calibrated_divergence": 0.0009999999999999913,
+    "calibrated_passes": true,
+    "delta": 0.001,
+    "epsilon": 5,
+    "negative_control": "reduce analytic Gaussian sigma by 1%",
+    "negative_control_divergence": 0.0011512447631194592,
+    "negative_control_rejected": true
+  },
+  {
+    "calibrated_divergence": 0.24999999999999512,
+    "calibrated_passes": true,
+    "delta": 0.25,
+    "epsilon": 10,
+    "negative_control": "reduce analytic Gaussian sigma by 1%",
+    "negative_control_divergence": 0.26488630104375727,
+    "negative_control_rejected": true
+  }
+]

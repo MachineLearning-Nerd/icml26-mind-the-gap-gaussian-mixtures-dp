@@ -45,6 +45,11 @@
         10
       ],
       "checks": 30,
+      "negative_control": {
+        "mutated_strict_variance_wins": 29,
+        "mutation": "replace one strict mixture-variance win with equality",
+        "rejected": true
+      },
       "scope": "cumulative coverage check; the accepted Proposition 3.3 proof certificate is unchanged",
       "status": "PASS",
       "strict_variance_wins": 30
@@ -2726,6 +2731,12 @@
     "mutation": "replace first positive improvement with zero",
     "rejected": true
   },
+  "notebook_check": {
+    "returncode": 0,
+    "status": "PASS",
+    "stderr": "",
+    "stdout": "warning[markdown-indentation]: Markdown cell should be dedented for better readability\n --> /repo/notebooks/mind_the_gap_reproduction.py:13:1\n  13 | @app.cell\n  14 | def _(mo):\n     |     ^\n  15 |     mo.md(\n\nwarning[markdown-indentation]: Markdown cell should be dedented for better readability\n --> /repo/notebooks/mind_the_gap_reproduction.py:43:1\n  43 | @app.cell\n  44 | def _(mo):\n     |     ^\n  45 |     mo.md(\n\nwarning[markdown-indentation]: Markdown cell should be dedented for better readability\n --> /repo/notebooks/mind_the_gap_reproduction.py:71:1\n  71 | @app.cell\n  72 | def _(mo):\n     |     ^\n  73 |     mo.md(\n\nFound 3 issues."
+  },
   "paper": "arXiv:2605.28078",
   "report_figures": {
     "claim1_dp_witness.svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"900\" height=\"500\" viewBox=\"0 0 900 500\"><rect width=\"100%\" height=\"100%\" fill=\"white\"/><style>text{font-family:system-ui,sans-serif;fill:#111827}</style><text x=\"450\" y=\"42\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"700\">A single fixed event exceeds the DP budget</text><line x1=\"105\" y1=\"410\" x2=\"855\" y2=\"410\" stroke=\"#374151\" stroke-width=\"2\"/><rect x=\"183.0\" y=\"410.0\" width=\"224.0\" height=\"0.0\" fill=\"#dc2626\"/><text x=\"295.0\" y=\"400.0\" text-anchor=\"middle\" font-size=\"20\">0.5</text><text x=\"295.0\" y=\"445\" text-anchor=\"middle\" font-size=\"17\">delta x1e6</text><rect x=\"533.0\" y=\"115.4\" width=\"224.0\" height=\"294.6\" fill=\"#dc2626\"/><text x=\"645.0\" y=\"105.4\" text-anchor=\"middle\" font-size=\"20\">67036.7</text><text x=\"645.0\" y=\"445\" text-anchor=\"middle\" font-size=\"17\">witness difference x1e6</text></svg>",
@@ -2751,9 +2762,9 @@
       "sympy": "1.14.0"
     },
     "fixed_command": "uv sync --frozen && .venv/bin/python repro/run_all.py",
-    "git_sha": "1be2569534197318cd5a36847b8eb786c5cfc52a",
+    "git_sha": "bfa49f476c523a944c121c8d81457912b0363ec1",
     "python": "3.12.13 (main, Jul 14 2026, 04:46:18) [GCC 14.2.0]",
-    "runtime_seconds": 12.911742706000041,
+    "runtime_seconds": 13.390348709000136,
     "seed": 260528078
   },
   "source": {
