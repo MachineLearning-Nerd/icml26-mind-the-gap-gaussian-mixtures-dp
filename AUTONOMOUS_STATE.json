@@ -21,7 +21,7 @@
     "5": 1
   },
   "last_checkpoint": "2026-08-13T00:00:00Z",
-  "last_known_git_commit": "88edf92",
+  "last_known_git_commit": "43b70f5",
   "publication_allowed": true,
   "compute_policy": "historical HF cpu-upgrade evidence only; no new remote, paid, or GPU rerun without explicit authorization",
   "former_repository": "icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy",

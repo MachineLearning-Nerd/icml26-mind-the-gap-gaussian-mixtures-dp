@@ -10,7 +10,7 @@ Target GitHub repository: https://github.com/MachineLearning-Nerd/icml26-mind-th
 Canonical branch: main
 
 Current phase: published_and_verified
-Publication status: normalized repository publication is in progress; no new scientific run was started for cleanup
+Publication status: normalized repository published and remote branch cleanup verified; no new scientific run was started for cleanup
 Compute policy: historical evidence used Hugging Face cpu-upgrade with no accelerator; no new remote, paid, or GPU run is authorized by this cleanup
 
 Source pins:
