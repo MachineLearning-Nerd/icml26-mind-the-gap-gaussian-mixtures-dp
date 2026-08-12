@@ -46,7 +46,7 @@ Python 3.12 is locked with NumPy 2.5.1, SciPy 1.18.0, SymPy 1.14.0, Matplotlib 3
 
 Successful research rounds consumed about 61.5 wall-clock minutes, dominated by the 55.98-minute stable quadrature route. Provider billing data was not exposed, so monetary cost is not estimated.
 
-Important lineage: [`claim-1-reference-cap-adversarial-audit`](https://github.com/MachineLearning-Nerd/icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy/tree/orx/claim-1-reference-cap-adversarial-audit), [`claim-3-exact-gap-closure-audit`](https://github.com/MachineLearning-Nerd/icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy/tree/orx/claim-3-exact-gap-closure-audit), [`claim-5-non-gaussian-benchmark-audit`](https://github.com/MachineLearning-Nerd/icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy/tree/orx/claim-5-non-gaussian-benchmark-audit), and [`cumulative-release-evidence-suite`](https://github.com/MachineLearning-Nerd/icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy/tree/orx/cumulative-release-evidence-suite).
+Important lineage is recorded in the repository's [historical branch audit](../../branch-audit.md). The normalized public repository keeps only main; all former experiment branch tips were ancestors of the final pre-normalization main tip, so retiring their pointers does not remove their reachable history.
 
 ## Assessment
 
