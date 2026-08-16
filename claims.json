@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp",
+  "previous_repository": "MachineLearning-Nerd/icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy",
+  "paper": {
+    "title": "Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy",
+    "arxiv": "2605.28078",
+    "openreview": "RdBsmhb9U7",
+    "authors": [
+      "Huikang Liu",
+      "Aras Selvi",
+      "Wolfram Wiesemann"
+    ],
+    "collection_label": "ICML 2026"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "paper_anchor": "Section 5 Table 1, #S5.T1",
+      "status": "FALSIFIED",
+      "producer": [
+        "repro/claim1_reported_loss_audit.py",
+        "repro/mechanisms.py",
+        "repro/claim1_continuous.py",
+        "repro/run_all.py"
+      ],
+      "evidence": [
+        "hf_space/evidence/current/claim1_scientific_reproduction.json",
+        "hf_space/evidence/current/cumulative_run.json",
+        ".openresearch/artifacts/claim1_falsification/independent_checker_output.json",
+        ".openresearch/artifacts/claim1_falsification/negative_control_output.json"
+      ],
+      "limitation": "Falsifies the privacy-qualified claim with fixed-event witnesses on epsilon at least 2; the full event supremum is not computed."
+    },
+    {
+      "id": "C2",
+      "paper_anchor": "Proposition 3.3, #S3.Thmtheorem3 and #A2.SS5",
+      "status": "VERIFIED",
+      "producer": [
+        "repro/run_all.py",
+        "repro/data/table1_l1.csv"
+      ],
+      "evidence": [
+        "hf_space/evidence/current/claim2_proposition_33_regression.json",
+        ".openresearch/artifacts/claim2_proposition33/independent_checker_output.json",
+        ".openresearch/artifacts/claim2_proposition33/negative_control_output.json"
+      ],
+      "limitation": "30/30 finite tail regression; the universal proposition remains supported by the paper's proof."
+    },
+    {
+      "id": "C3",
+      "paper_anchor": "Appendix D.3 and Table 4",
+      "status": "FALSIFIED",
+      "producer": [
+        "repro/claim3_gap_audit.py",
+        "repro/data/table4_gap_tail.csv",
+        "repro/run_all.py"
+      ],
+      "evidence": [
+        "hf_space/evidence/current/claim3_gap_closure_audit.json",
+        ".openresearch/artifacts/claim3_gap_closure/independent_checker_output.json",
+        ".openresearch/artifacts/claim3_gap_closure/negative_control_output.json"
+      ],
+      "limitation": "The reported values and privacy premise are falsified; another valid mechanism is not ruled out."
+    },
+    {
+      "id": "C4",
+      "paper_anchor": "Corollary 3.7, #S3.Thmtheorem7 and #A2.SS8",
+      "status": "VERIFIED",
+      "producer": [
+        "repro/run_all.py"
+      ],
+      "evidence": [
+        "hf_space/evidence/current/claim4_corollary_37_regression.json",
+        ".openresearch/artifacts/claim4_zcdp/independent_checker_output.json",
+        ".openresearch/artifacts/claim4_zcdp/negative_control_output.json"
+      ],
+      "limitation": "Scope is the common-weight translated-mixture construction; unequal weights are not covered."
+    },
+    {
+      "id": "C5",
+      "paper_anchor": "Table 2 and Appendix D.6",
+      "status": "FALSIFIED",
+      "producer": [
+        "repro/claim5_benchmarks.py",
+        "repro/mechanisms.py",
+        "repro/run_all.py"
+      ],
+      "evidence": [
+        "hf_space/evidence/current/claim5_non_gaussian_benchmark_audit.json",
+        ".openresearch/artifacts/claim5_benchmarks/independent_checker_output.json",
+        ".openresearch/artifacts/claim5_benchmarks/negative_control_output.json"
+      ],
+      "limitation": "Truncated Laplace, Tulap, and staircase are independently implemented; cactus and flipped Huber are source-audited only."
+    }
+  ],
+  "attribution": {
+    "name": "MachineLearning-Nerd",
+    "email": "MachineLearning-Nerd@users.noreply.github.com",
+    "co_author_trailers_allowed": false
+  }
+}

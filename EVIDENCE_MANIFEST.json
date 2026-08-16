@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp",
+  "source": {
+    "arxiv": "2605.28078",
+    "source_sha256": "523ac5e6672fd75a38acb0c881b466364921fca5ff5fbf74f2ec480993957f53"
+  },
+  "recorded_run": {
+    "evidence_revision": "bfa49f476c523a944c121c8d81457912b0363ec1",
+    "command": "uv sync --frozen && .venv/bin/python repro/run_all.py",
+    "backend": "hf/cpu-upgrade",
+    "estimated_cores": 1,
+    "affinity_cpus": 64,
+    "gpu": false,
+    "seed": 260528078,
+    "runtime_seconds": 13.390348709000136
+  },
+  "claim_statuses": {
+    "C1": "FALSIFIED",
+    "C2": "VERIFIED",
+    "C3": "FALSIFIED",
+    "C4": "VERIFIED",
+    "C5": "FALSIFIED"
+  },
+  "content_addressed_artifacts": [
+    {"path": "hf_space/evidence/current/cumulative_run.json", "sha256": "de5c214842eecf3c4a9a6ddd6b9242f0da4bcd6d9c7bd306d5a4de21a5f8bb01"},
+    {"path": "hf_space/evidence/current/claim1_scientific_reproduction.json", "sha256": "f1328be890c3fec63efc9289fda516190353b65db199437d61f23e41ca45b9a5"},
+    {"path": "hf_space/evidence/current/claim2_proposition_33_regression.json", "sha256": "22bb8e91d225739182f9817ad131055c402bcedc2c130402efd038d2ff709416"},
+    {"path": "hf_space/evidence/current/claim3_gap_closure_audit.json", "sha256": "f9b3b4fe52c77b730525c7ec6c6a19bad36961ff9c230781fd95f8b7c3dba0fe"},
+    {"path": "hf_space/evidence/current/claim4_corollary_37_regression.json", "sha256": "d19f8778f310e387506cc66ed992cd7a70f648db251f4cd38576250020938e25"},
+    {"path": "hf_space/evidence/current/claim5_non_gaussian_benchmark_audit.json", "sha256": "e0e5e3a6f2d8c7c257d1ac2dfb9fd610a72820bdc6b9c3c8ea56e7322e618bd5"},
+    {"path": "hf_space/evidence/current/historical_subset_check.json", "sha256": "90be3f32169004e30df8ae46264a97342d4827790649b960c1aa02ba428ee1c3"},
+    {"path": "hf_space/evidence/current/upload_allowlist.txt", "sha256": "aeed41a411d647dbb992e7a540571e3521a25413ded270af2c61e680386aadd3"},
+    {"path": "hf_space/evidence/current/upload_manifest.sha256", "sha256": "1e10860380f54ff5581b9fc56fa01aa855363d6cef842ae0160ddab771db6c3e"},
+    {"path": "hf_space/logbook.json", "sha256": "3921e1836a6b831ba6aa1836521b9914754b8e6e012894db3a178efd49ce2a82"},
+    {"path": "hf_space/README.md", "sha256": "08174ce4c7b67996f0d08d63b7c3b569779b73d6e18258fa4d071baa50455fac"},
+    {"path": "hf_space/code/current/repro/run_all.py", "sha256": "f0714b71544e90291cca1f91493a220c84081846fdebac7c20e54a1c96aeacf0"}
+  ],
+  "required_audit_files": [
+    "README.md",
+    "STATUS.md",
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "BRANCH_AUDIT.md",
+    "ENVIRONMENT.md",
+    "REPORT.md",
+    "AUTHOR_THANK_YOU.md",
+    "CITATION.cff",
+    "claims.json",
+    "EVIDENCE_MANIFEST.json",
+    "verify_final.py"
+  ],
+  "required_evidence_paths": [
+    "branch-audit.md",
+    "hf_space/evidence/current/cumulative_run.json",
+    "hf_space/evidence/current/claim1_scientific_reproduction.json",
+    "hf_space/evidence/current/claim2_proposition_33_regression.json",
+    "hf_space/evidence/current/claim3_gap_closure_audit.json",
+    "hf_space/evidence/current/claim4_corollary_37_regression.json",
+    "hf_space/evidence/current/claim5_non_gaussian_benchmark_audit.json",
+    "hf_space/evidence/current/historical_subset_check.json",
+    "hf_space/evidence/current/upload_allowlist.txt",
+    "hf_space/evidence/current/upload_manifest.sha256",
+    "hf_space/code/current/repro/run_all.py",
+    "pyproject.toml",
+    "uv.lock"
+  ],
+  "branches": {
+    "expected_final": ["main"],
+    "historical_remote_branch_count": 11,
+    "legacy_prefixes_removed": ["orx/"],
+    "legacy_refs_are_provenance_only": true
+  },
+  "external_evaluation_boundary": {
+    "current_score_claim": null,
+    "historical_score": "4/10",
+    "forecast_is_not_a_judge_result": true
+  },
+  "attribution": {
+    "name": "MachineLearning-Nerd",
+    "email": "MachineLearning-Nerd@users.noreply.github.com",
+    "author_and_committer_required": true,
+    "co_author_trailers_allowed": false
+  }
+}

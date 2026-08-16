@@ -14,6 +14,7 @@ The printed Table 1 aggregate is reproduced exactly: 142 strict wins out of 150 
 | Authors | Huikang Liu, Aras Selvi, and Wolfram Wiesemann |
 | Paper | [arXiv:2605.28078](https://arxiv.org/abs/2605.28078) |
 | Venue record | [Author announcement for ICML 2026](https://wp.doc.ic.ac.uk/wwiesema/2026/05/04/mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy/) |
+| Public review record | [OpenReview RdBsmhb9U7](https://openreview.net/forum?id=RdBsmhb9U7) |
 | Paper source used for checks | [ar5iv HTML](https://ar5iv.labs.arxiv.org/html/2605.28078), retrieved 2026-08-02 |
 | Source SHA-256 | 523ac5e6672fd75a38acb0c881b466364921fca5ff5fbf74f2ec480993957f53 |
 | Current repository | [MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp](https://github.com/MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp) |
@@ -72,11 +73,27 @@ Historical research computation ran on Hugging Face cpu-upgrade, with Python 3.1
 | STATUS.md | Current paper, claim, source, and publication status |
 | AUTONOMOUS_STATE.json | Machine-readable continuation state for the collection workflow |
 
+## Audit dossier
+
+The collection audit is split into small, reviewable records:
+
+- [Claim evidence ledger](CLAIM_EVIDENCE.md) — exact claim contracts, producers, evidence, verdicts, and limitations.
+- [Source audit](SOURCE_AUDIT.md) — paper identity, source pins, implementation provenance, and scope boundaries.
+- [Branch audit](BRANCH_AUDIT.md) — canonical branch policy and the purpose of every retired experiment branch.
+- [Environment](ENVIRONMENT.md) — fixed command, historical run metadata, dependencies, and evidence hashes.
+- [Audit report](REPORT.md) — final interpretation and publication boundary.
+- [Citation](CITATION.cff) — machine-readable citation metadata.
+- [Author thank-you note](AUTHOR_THANK_YOU.md) — attribution and independence statement.
+- [claims.json](claims.json) and [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json) — machine-readable claim and provenance records.
+- [verify_final.py](verify_final.py) — dependency-free fail-closed repository verifier.
+
 Start with [Current verification](hf_space/pages/current/verification.md), then read the individual [Claim 1](hf_space/pages/current/claim-1.md), [Claim 2](hf_space/pages/current/claim-2.md), [Claim 3](hf_space/pages/current/claim-3.md), [Claim 4](hf_space/pages/current/claim-4.md), and [Claim 5](hf_space/pages/current/claim-5.md) pages. The [visibility matrix](hf_space/pages/current/visibility-matrix.md) maps every claim to its code, data, checker, control, and raw evidence.
 
 ## Branch policy
 
 The public repository uses one stable branch: main. The former orx/* names were experiment labels, not public interfaces. Every former remote tip was an ancestor of the final pre-normalization main tip, so retiring those pointers does not discard their reachable history. Their purposes and outcomes are recorded in [branch-audit.md](branch-audit.md).
+
+Every reachable commit in this publication is attributed to MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>. Historical evidence files retain their original scientific SHAs for provenance.
 
 ## Citation
 

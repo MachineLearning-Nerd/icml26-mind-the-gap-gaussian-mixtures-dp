@@ -10,7 +10,9 @@
     "claim_ledger_written",
     "branch_audit_written",
     "repository_renamed_and_history_normalized",
-    "remote_branch_cleanup_verified"
+    "remote_branch_cleanup_verified",
+    "canonical_identity_normalized",
+    "audit_dossier_written"
   ],
   "failed_attempts": [],
   "claim_attempt_counts": {
@@ -20,8 +22,8 @@
     "4": 1,
     "5": 1
   },
-  "last_checkpoint": "2026-08-13T00:00:00Z",
-  "last_known_git_commit": "43b70f5",
+  "last_checkpoint": "2026-08-17T00:00:00Z",
+  "last_known_git_commit": "8f0095a4278692c58da01f7c04774e27eb57540f",
   "publication_allowed": true,
   "compute_policy": "historical HF cpu-upgrade evidence only; no new remote, paid, or GPU rerun without explicit authorization",
   "former_repository": "icml26-repro-RdBsmhb9U7-mind-the-gap-mixtures-of-gaussians-in-approximate-differential-privacy",

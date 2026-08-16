@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this audit or its recorded outputs, please cite the paper and this repository."
+title: "ICML 2026 Mind the Gap Differential Privacy Audit"
+version: "1.0.0"
+date-released: 2026-08-17
+authors:
+  - name: MachineLearning-Nerd
+repository-code: "https://github.com/MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp"
+url: "https://github.com/MachineLearning-Nerd/icml26-mind-the-gap-gaussian-mixtures-dp"
+references:
+  - type: article
+    title: "Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy"
+    authors:
+      - given-names: Huikang
+        family-names: Liu
+      - given-names: Aras
+        family-names: Selvi
+      - given-names: Wolfram
+        family-names: Wiesemann
+    year: 2026
+    url: "https://arxiv.org/abs/2605.28078"
+    identifiers:
+      - type: arxiv
+        value: "2605.28078"

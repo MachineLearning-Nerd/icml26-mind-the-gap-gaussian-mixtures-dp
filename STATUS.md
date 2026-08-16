@@ -29,3 +29,13 @@ Claim status:
 - Claim 5: FALSIFIED by the independent high-epsilon benchmark winners and the missing equal-privacy premise
 
 The current main branch contains the publication surface. Eleven historical experiment branch pointers are documented in branch-audit.md and are retired after the audit is committed. The complete raw evidence remains under hf_space/evidence/current.
+
+Audit records:
+
+- CLAIM_EVIDENCE.md records how each claim is produced and what evidence supports it.
+- SOURCE_AUDIT.md records paper and implementation provenance.
+- BRANCH_AUDIT.md records the canonical main branch and all eleven retired orx branches.
+- ENVIRONMENT.md records the fixed environment and historical run provenance.
+- REPORT.md records the final scope and limitations.
+- CITATION.cff and AUTHOR_THANK_YOU.md provide citation and author attribution.
+- verify_final.py checks the dossier, evidence hashes, branch state, and canonical commit identity.
